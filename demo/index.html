@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Demo: Inifinte Scroll Module</title>
+	<style type="text/css">
+		body {
+			margin-left: 0;
+		}
+		.scroller {
+			background-color: #f0f0f0;
+			border: 1px solid #000;
+			float: left;
+			height: 300px;
+			margin: 1em;
+			overflow: auto;
+			width: 400px;
+		}
+		.scroller ol {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		.scroller li {
+			border-bottom: 1px solid #000;
+			padding: 0 1em;
+		}
+		.scroller li:last-child {
+			border-bottom-width: 0;
+		}
+		.scroller table {
+			border-spacing: 0;
+			height: 400px;
+			overflow: auto;
+		}
+		.scroller table td,
+		.scroller table th {
+			border-bottom: 1px solid #000;
+			padding: 2px 8px;
+			text-align: left;
+			vertical-align: top
+		}
+		.scroller table tbody:last-child tr:last-child td {
+			border-bottom-width: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="scroller" id="scroller-1">
+		<ol class="infiniteScroll-container"></ol>
+	</div>
+
+	<div class="scroller" id="scroller-2">
+		<table class="infiniteScroll-container">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Description</th>
+					<th nowrap></th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<script type="text/html" id="page-0">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor varius augue, quis semper ante mattis ut. Duis consequat commodo hendrerit. Nulla imperdiet et mauris at consequat. Maecenas luctus placerat malesuada. Nunc ornare, libero eu congue tincidunt, arcu massa semper neque, at interdum diam neque et enim. Nunc sed velit neque. Curabitur tincidunt porttitor nisi ac lobortis. Nam lobortis vel risus sed pellentesque. Aliquam erat volutpat. Maecenas ut tellus cursus, ultricies leo vel, aliquam eros.</p>
+		<p>In nisl orci, eleifend non urna dictum, tempus bibendum felis. Fusce congue tincidunt massa eu ullamcorper. Aenean consequat ante sit amet sodales porttitor. Curabitur eu lectus convallis, euismod purus ut, aliquet nulla. Cras interdum lectus in ante hendrerit, ac commodo libero tempor. Sed feugiat tellus ipsum, ac scelerisque urna molestie non. Nunc consectetur odio nec turpis imperdiet, ac eleifend orci fermentum. Nulla facilisi. Suspendisse scelerisque vestibulum odio a pretium. Nulla cursus nec tellus eu rhoncus. Vivamus quis ante egestas, malesuada velit in, interdum velit. Maecenas egestas nec lectus ac consectetur.</p>
+		<p>Aenean pharetra massa dui, non varius libero blandit id. Sed nec feugiat sem. Phasellus ultrices erat dignissim, bibendum dui sed, tincidunt metus. Curabitur ac quam eu massa malesuada imperdiet. Donec in tellus in urna condimentum varius. Sed commodo lorem non diam sagittis sagittis. Etiam quis arcu at augue tempor egestas. Praesent vel elit eget mauris tempus pulvinar. Integer vitae metus ut nisi tincidunt fringilla ut eu augue. Nunc ac est scelerisque, faucibus lacus et, tempor velit. Morbi volutpat justo augue, nec aliquet mauris porta non. Pellentesque sagittis rutrum purus, vel pellentesque purus iaculis non.</p>
+		<p>Quisque vel diam ac elit pretium aliquet. Fusce fringilla ipsum et odio feugiat suscipit. Aliquam neque mi, euismod a volutpat nec, facilisis quis purus. Nulla hendrerit vehicula vestibulum. Vivamus molestie id augue ut semper. Mauris sollicitudin mi id dignissim vulputate. Ut eros lacus, iaculis vel posuere sed, vehicula sit amet est. Praesent egestas lorem id augue congue, quis mollis sapien condimentum. Aliquam semper cursus nibh, id molestie erat suscipit viverra. Nulla euismod urna in erat rhoncus, vel vestibulum urna aliquet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris egestas nisi at turpis dapibus condimentum.</p>
+		<p>Mauris imperdiet diam vitae risus porttitor volutpat. Nam sit amet mattis est. Nulla pharetra urna turpis, nec pharetra nisi elementum eget. Donec suscipit nunc tortor, varius varius tellus sodales non. Nunc dictum enim et egestas mollis. Nam mauris mauris, luctus volutpat ipsum ut, pulvinar interdum risus. Praesent sem nunc, semper ac mi sed, viverra vehicula enim. Pellentesque a venenatis nulla, sit amet commodo elit. Suspendisse cursus et nulla sed tincidunt. Sed viverra a arcu id ornare. Praesent non consequat dolor. Etiam laoreet est non sem hendrerit pretium. Nam rutrum id felis non semper. Proin vel aliquam odio, ornare rhoncus nunc. Donec suscipit aliquam dui, in dapibus justo vehicula ullamcorper. Suspendisse faucibus malesuada faucibus.</p>
+	</script>
+	<script type="text/html" id="page-1">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan libero lectus, at interdum quam facilisis sed. Aliquam feugiat, justo id blandit sodales, odio sem dignissim massa, et sodales tortor mi a turpis. Aliquam lobortis erat vitae erat ullamcorper, nec varius sem dictum. Vivamus pharetra arcu id lacinia euismod. Sed at tristique dolor, nec volutpat leo. Morbi consectetur erat quis sapien faucibus ornare. Integer sollicitudin rhoncus tincidunt. Integer facilisis volutpat urna sed egestas. Proin tincidunt, massa vel molestie suscipit, eros dolor varius mauris, id facilisis tortor nisi et massa. In hac habitasse platea dictumst. Vestibulum et dictum mi. Morbi tempor massa enim, vel porta quam pulvinar a. Sed dictum mauris eu convallis aliquam.</p>
+		<p>Nullam vehicula odio lorem, in iaculis nibh gravida sit amet. Donec sodales posuere lorem, ut rhoncus purus luctus non. Quisque sed tortor quis turpis faucibus ultrices. Morbi sed quam tellus. Donec augue nisl, eleifend sed tellus vel, vestibulum porttitor mauris. Sed rhoncus convallis purus. Nullam tempor sagittis lacus et tincidunt. Curabitur vel tempus nunc, eu vulputate ligula. Nulla facilisi. Ut massa diam, pharetra ac aliquam eu, condimentum eu diam. Integer id placerat sapien, at tempus ipsum. Aenean rutrum tempor odio id volutpat. Nam feugiat erat sed nisi pulvinar convallis. </p>
+	</script>
+	<script type="text/html" id="page-2">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate eros purus, at euismod odio luctus vel. Vivamus ante sapien, ornare vitae tellus porta, scelerisque imperdiet est. Nulla nec velit a nisi faucibus laoreet. Proin faucibus fermentum velit vel tincidunt. Sed tincidunt arcu eu tempus dictum. Suspendisse malesuada justo eu turpis lacinia ullamcorper. Vivamus at cursus dolor. Sed sed arcu blandit, dictum nisi fringilla, elementum mauris. Praesent adipiscing tortor porta tellus consectetur congue. Aliquam interdum pretium justo at molestie. Phasellus vel magna diam.</p>
+		<p>Etiam mauris magna, varius sed nibh at, aliquet eleifend urna. Nullam nec lacus eget sem consectetur imperdiet. In accumsan non lectus in fringilla. Sed nulla ipsum, auctor quis nisi quis, dictum malesuada nisl. Morbi scelerisque varius est vitae vulputate. Sed molestie sed justo non pharetra. Cras viverra tempor turpis ut mollis.</p>
+		<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam sit amet ultrices justo. Nulla ullamcorper tortor eget metus tincidunt, quis aliquet metus fermentum. Nunc sagittis pulvinar nunc eget molestie. Nam volutpat neque at dictum lobortis. Morbi ultrices urna nec magna venenatis imperdiet. Donec at accumsan turpis, sit amet vestibulum nulla. Cras porttitor velit at enim facilisis auctor. Curabitur sagittis adipiscing suscipit. Maecenas urna dui, consectetur et lacinia nec, hendrerit eget quam. Nunc pretium erat vitae sollicitudin dapibus. Sed vitae ornare leo. Duis sit amet interdum tortor. Nunc ac quam ut arcu vulputate congue.</p>
+	</script>
+
+	<script type="text/html" id="results-0">
+		<tr>
+			<td>1</td>
+			<td>Hammer</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td nowrap>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Oranges</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td nowrap>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td nowrap>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td nowrap>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+	</script>
+	<script type="text/html" id="results-1">
+		<tr>
+			<td>11</td>
+			<td>Hammer</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>Oranges</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>16</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>18</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>19</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>20</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+	</script>
+	<script type="text/html" id="results-2">
+		<tr>
+			<td>21</td>
+			<td>Hammer</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>22</td>
+			<td>Oranges</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>23</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>24</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+		<tr>
+			<td>25</td>
+			<td>Car</td>
+			<td>Etiam mauris magna, varius sed nibh at</td>
+			<td>
+				<a href="#">Add to Cart</a>
+			</td>
+		</tr>
+	</script>
+
+	<script type="text/javascript" src="../bower_components/oxydizr/src/Oxydizr.js"></script>
+	<script type="text/javascript" src="../bower_components/oxydizr/src/Oxydizr/FrontController.js"></script>
+	<script type="text/javascript" src="../bower_components/module-base/src/module/base.js"></script>
+	<script type="text/javascript" src="../bower_components/module-utils/dist/module-utils-base.concat.js"></script>
+	<script type="text/javascript" src="../bower_components/module-utils/dist/module-utils-element_store.concat.js"></script>
+	<script type="text/javascript" src="../bower_components/module-utils/dist/module-utils-events.concat.js"></script>
+	<script type="text/javascript" src="../bower_components/mocking_bird/src/mocking_bird.js"></script>
+	<script type="text/javascript" src="../bower_components/mocking_bird/src/mocking_bird/xml_http_request.js"></script>
+	<script type="text/javascript" src="../src/module/infinite_scroll_module.js"></script>
+	<script type="text/javascript">
+
+		// Set up fake Ajax
+		MockingBird.XMLHttpRequest.disableNetworkConnections()
+
+			// module1
+			.mock("/search?text=foo&limit=10&offset=0", "GET", {
+				status: 200,
+				responseHeaders: {
+					"content-type": "text/html"
+				},
+				body: markup("page-0")
+			})
+			.mock("/search?text=foo&limit=10&offset=1", "GET", {
+				status: 200,
+				responseHeaders: {
+					"content-type": "text/html"
+				},
+				body: markup("page-1")
+			})
+			.mock("/search?text=foo&limit=10&offset=2", "GET", {
+				status: 200,
+				responseHeaders: {
+					"content-type": "text/html"
+				},
+				body: markup("page-2")
+			})
+			.mock("/search?text=foo&limit=10&offset=3", "GET", {
+				status: 404,
+				responseHeaders: {
+					"content-type": "text/html"
+				},
+				body: "Not found"
+			})
+
+			// module2
+			.mock("/products/search?text=foo&limit=10&offset=0", "GET", {
+				status: 200,
+				responseHeaders: {
+					"content-type": "text/html"
+				},
+				body: markup("results-0")
+			})
+			.mock("/products/search?text=foo&limit=10&offset=1", "GET", {
+				status: 200,
+				responseHeaders: {
+					"content-type": "text/html"
+				},
+				body: markup("results-1")
+			})
+			.mock("/products/search?text=foo&limit=10&offset=2", "GET", {
+				status: 200,
+				responseHeaders: {
+					"content-type": "text/html"
+				},
+				body: markup("results-2")
+			})
+			.mock("/products/search?text=foo&limit=10&offset=3", "GET", {
+				status: 404,
+				responseHeaders: {
+					"content-type": "text/html"
+				},
+				body: "Not found"
+			});
+
+		var module1 = new Module.InfiniteScrollModule().init("scroller-1", {
+			url: "/search?text=foo"
+		});
+
+		var module2 = new Module.InfiniteScrollModule().init("scroller-2", {
+			url: "/products/search?text=foo"
+		});
+
+		function markup(id) {
+			return document.getElementById(id).innerHTML;
+		}
+
+	</script>
+</body>
+</html>
